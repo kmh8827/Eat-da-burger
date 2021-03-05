@@ -3,16 +3,28 @@ const connection = require('./connection');
 
 const orm = {
 
- selectAll() {
-
+ selectAll(tableInput, cb) {
+    const search = `SELECT ${tableInput} FROM burgers`
+    connection.query(search, (err, results) => {
+        if (err) throw err;
+        cb(results);
+    });
  },
 
- insertOne() {
-
+ insertOne(tableInput, cb) {
+    const search = `INSERT ${tableInput} INTO burgers (burger_name, devoured)`
+    connection.query(search, (err, results) => {
+        if(err) throw err;
+        cb(results);
+    })
  },
 
- updateOne() {
-
+ updateOne(tableInput, cb, condition) {
+    const search = `UPDATE burgers SET ${tableInput} WHERE ${condition}`
+    connection.query(search, (err, results) => {
+        if (err) throw err;
+        cb(results);
+    });
  }
 
 };
