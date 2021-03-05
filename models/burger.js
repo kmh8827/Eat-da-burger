@@ -1,4 +1,3 @@
-const { insertOne, updateOne } = require('../config/orm');
 const orm = require('../config/orm');
 
 const burger = {
