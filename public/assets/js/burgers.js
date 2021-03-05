@@ -42,5 +42,30 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     }
 
-    const createBurget = document.getElementById('createBurget');
+    const createBtn = document.getElementById('createBurger');
+
+    if (createBtn) {
+        createBtn.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const newBurger = {
+                burger_name: document.getElementById('burgerName')
+            };
+
+            fetch('/api/burgers', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+
+                body: JSON.stringify(newCat),
+            }).then(() => {
+                document.getElementById('burgerName').value = '';
+
+                console.log('Created a new Burger');
+                location.reload();
+            });
+        });
+    }
 });
