@@ -19,7 +19,7 @@ const orm = {
     })
  },
 
- updateOne(tableInput, cb, condition) {
+ updateOne(tableInput, condition, cb) {
     const search = `UPDATE burgers SET ${tableInput} WHERE ${condition}`
     connection.query(search, (err, results) => {
         if (err) throw err;
