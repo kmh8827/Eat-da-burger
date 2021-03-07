@@ -1,3 +1,7 @@
+.burgerName {
+    color: #450101;
+}
+
 .burgey {
     display: block;
     margin-left: auto;
@@ -10,19 +14,29 @@
     margin: auto;
   }
 
+.changeBurger {
+    margin-top: 10px;
+    color: white;
+}
+
 .create {
-    color: #450101
+    color: #450101;
 }
 
 .heading {
-    color: #ec2121
+    color: #32c704;
 }
 
 .title {
-    color: #ec2121;
+    color: #e5cb7a;
     text-align: center;
 }
 
+.newBurger {
+    background-color: #e5cb7a;
+    margin-top: 10px;
+}
+
 body {
-    background-color: tan;
+    background-color: white;
 }
