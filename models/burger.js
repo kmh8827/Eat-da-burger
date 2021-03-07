@@ -5,10 +5,10 @@ const burger = {
         orm.selectAll('burgers', (res) => cb(res));
     },
     insertOne(cb) {
-        orm.insertOne(values, (res) => cb(res));
+        orm.insertOne('burgers', cols, values, (res) => cb(res));
     },
     updateOne(cb) {
-        orm.updateOne(values, condition, (res) => cb(res)); 
+        orm.updateOne('burgers', values, condition, (res) => cb(res)); 
     }
 };
 
