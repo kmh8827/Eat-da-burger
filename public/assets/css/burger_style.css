@@ -1,0 +1,28 @@
+.burgey {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+    padding: 100px;
+}
+
+.center {
+    margin: auto;
+  }
+
+.create {
+    color: #450101
+}
+
+.heading {
+    color: #ec2121
+}
+
+.title {
+    color: #ec2121;
+    text-align: center;
+}
+
+body {
+    background-color: tan;
+}
