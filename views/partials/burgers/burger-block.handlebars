@@ -1,12 +1,10 @@
 <li>
-   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <p class="burgName">{{id}} {{ burger_name }}</p>
-
+    <div class="d-grid gap-2 d-md-flex">
+        <p class="burgName">{{id}}. {{burger_name}}</p>
             {{#unless devoured}}
-            <button type="button" class="btn btn-warning btn-lg changeBurger"
-                data-id="{{id}}" data-devoured="{{devoured}}">
+            <button type="button" class="btn btn-warning btn-lg ml-auto changeBurger" data-id="{{id}}"
+                data-devoured="{{devoured}}">
                 Eat
             </button>
             {{/unless}}
-    </div>
 </li>

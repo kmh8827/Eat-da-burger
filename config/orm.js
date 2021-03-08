@@ -6,7 +6,7 @@ const printQuestionMarks = (num) => {
     for (let i = 0; i < num; i++) {
         arr.push('?');
     }
-
+    console.log(arr.toString());
     return arr.toString();
 };
 
@@ -44,16 +44,17 @@ const orm = {
 
     insertOne(table, cols, vals, cb) {
         const search = `INSERT INTO ${table} (${cols.toString()}) VALUES (${printQuestionMarks(vals.length)})`;
-        console.log(search);
-        connection.query(search, (err, results) => {
+        console.log("the search is " + search);
+        console.log('values ' + vals);
+        connection.query(search,vals, (err, results) => {
             if (err) throw err;
             cb(results);
         })
     },
 
     updateOne(table, values, condition, cb) {
-        const search = `UPDATE ${table} SET ${objToSql(values)} WHERE ${condition}`
-        connection.query(search, (err, results) => {
+        const search = `UPDATE ${table} SET ${objToSql(values)} WHERE ${condition}`;
+        connection.query(search, values, (err, results) => {
             if (err) throw err;
             cb(results);
         });

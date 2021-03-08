@@ -13,11 +13,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             const id = e.target.getAttribute('data-id');
             const eaten = e.target.getAttribute('data-devoured');
-            console.log(id);
-            console.log(eaten);
 
             const newDevoured = {
-                devoured: eaten
+                devoured: true
             };
 
             fetch(`/api/burgers/${id}`, {
@@ -31,7 +29,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }).then((response) => {
 
                 if (response.ok) {
-                    console.log(`changed devored to ${eaten}`);
                     location.reload('/');
                 } else {
                     alert('Uh-Oh');
@@ -49,9 +46,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
             e.preventDefault();
 
             const newBurger = {
-                burger_name: document.getElementById('burgerName')
+                burger_name: document.getElementById('burgerName').value
             };
-
+            console.log("newburger is " + newBurger);
+            console.log(document.getElementById('burgerName').value)
             fetch('/api/burgers', {
                 method: 'POST',
                 headers: {
@@ -64,7 +62,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 document.getElementById('burgerName').value = '';
 
                 console.log('Created a new Burger');
-                location.reload();
+                // location.reload();
             });
         });
     }
