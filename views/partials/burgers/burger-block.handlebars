@@ -1,7 +1,12 @@
 <li>
-    {{ name }}
+   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <p class="burgName">{{id}} {{ burger_name }}</p>
 
-    <button type="button" class="btn {{#if devoured}}btn-danger{{else}}btn-warning{{/if}} btn-lg changeBurger" data-id="{{id}}" data-devoured="{{devoured}}">
-        {{#if devoured}}Devoured{{else}}Eat{{/if}}
-    </button>
+            {{#unless devoured}}
+            <button type="button" class="btn btn-warning btn-lg changeBurger"
+                data-id="{{id}}" data-devoured="{{devoured}}">
+                Eat
+            </button>
+            {{/unless}}
+    </div>
 </li>

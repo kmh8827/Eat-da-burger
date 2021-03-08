@@ -4,10 +4,10 @@ const burger = {
     selectAll(cb) {
         orm.selectAll('burgers', (res) => cb(res));
     },
-    insertOne(cb) {
+    insertOne(cols, values, cb) {
         orm.insertOne('burgers', cols, values, (res) => cb(res));
     },
-    updateOne(cb) {
+    updateOne(values, condition, cb) {
         orm.updateOne('burgers', values, condition, (res) => cb(res)); 
     }
 };

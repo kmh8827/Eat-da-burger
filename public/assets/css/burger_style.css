@@ -2,6 +2,10 @@
     color: #450101;
 }
 
+.burgName {
+    color:#450101;
+}
+
 .burgey {
     display: block;
     margin-left: auto;
@@ -35,6 +39,12 @@
 .newBurger {
     background-color: #e5cb7a;
     margin-top: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 body {

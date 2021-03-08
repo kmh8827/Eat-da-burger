@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             const id = e.target.getAttribute('data-id');
             const eaten = e.target.getAttribute('data-devoured');
+            console.log(id);
+            console.log(eaten);
 
             const newDevoured = {
                 devoured: eaten
@@ -57,7 +59,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     'Content-Type': 'application/json',
                 },
 
-                body: JSON.stringify(newCat),
+                body: JSON.stringify(newBurger),
             }).then(() => {
                 document.getElementById('burgerName').value = '';
 
