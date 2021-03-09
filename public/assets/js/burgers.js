@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 document.getElementById('burgerName').value = '';
 
                 console.log('Created a new Burger');
-                // location.reload();
+                location.reload();
             });
         });
     }
