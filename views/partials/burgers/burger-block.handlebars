@@ -1,6 +1,8 @@
 <li>
     <div class="d-grid gap-2 d-md-flex justify-content-between align-items-center">
+        {{!-- Displays Burger Id and Name --}}
         <p class="burgName">{{id}}. {{burger_name}}</p>
+        {{!-- Checks to see if burger devoured, if False adds an Eat button --}}
         {{#unless devoured}}
         <button type="button" class="btn btn-primary btn-lg ml-auto changeBurger" data-id="{{id}}"
             data-devoured="{{devoured}}">

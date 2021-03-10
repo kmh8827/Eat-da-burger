@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', (event) => {
+    // Makes sure the DOM haS loaded
     if (event) {
         console.log('DOM loaded');
     }
 
     const eatBtn = document.querySelectorAll('.changeBurger');
-
+    // Checks to see if an Eat Button exists
     if (eatBtn) {
         eatBtn.forEach((button) => {
             button.addEventListener('click', (e) => {
@@ -12,8 +13,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             console.log('devoured');
 
             const id = e.target.getAttribute('data-id');
-            const eaten = e.target.getAttribute('data-devoured');
-
+            // Changes the devoured value of Selected Burger to True
             const newDevoured = {
                 devoured: true
             };
@@ -40,16 +40,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     const createBtn = document.getElementById('createBurger');
-
+    // Checks for the create Button
     if (createBtn) {
         createBtn.addEventListener('submit', (e) => {
             e.preventDefault();
-
+            // Gets the burger ID
             const newBurger = {
                 burger_name: document.getElementById('burgerName').value
             };
-            console.log("newburger is " + newBurger);
-            console.log(document.getElementById('burgerName').value)
+
             fetch('/api/burgers', {
                 method: 'POST',
                 headers: {
@@ -61,7 +60,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }).then(() => {
                 document.getElementById('burgerName').value = '';
 
-                console.log('Created a new Burger');
                 location.reload();
             });
         });
